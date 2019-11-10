@@ -43,7 +43,7 @@ namespace com.tavaresasilva.MyOwnCollections
             }
         }
 
-        public bool HasValue(int value)
+        public bool Contains(int value)
         {
             Node currentNode = head;
 
@@ -123,6 +123,12 @@ namespace com.tavaresasilva.MyOwnCollections
             }
 
             return currentNode;
+        }
+
+        public void Clear()
+        {
+            head = null;
+            count = 0;
         }
 
         public LinkedList()

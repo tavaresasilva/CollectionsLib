@@ -35,17 +35,17 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             //Assert
             Assert.AreEqual(expectedListCount, linkedList.Count());
 
-            Assert.IsTrue(linkedList.HasValue(12));
-            Assert.IsTrue(linkedList.HasValue(13));
-            Assert.IsTrue(linkedList.HasValue(16));
+            Assert.IsTrue(linkedList.Contains(12));
+            Assert.IsTrue(linkedList.Contains(13));
+            Assert.IsTrue(linkedList.Contains(16));
 
-            Assert.IsFalse(linkedList.HasValue(50));
-            Assert.IsFalse(linkedList.HasValue(35));
+            Assert.IsFalse(linkedList.Contains(50));
+            Assert.IsFalse(linkedList.Contains(35));
 
         }
 
         [TestMethod]
-        public void HasValue_True()
+        public void Contains_True()
         {
             //Arrenge
             LinkedList list = new LinkedList();
@@ -53,7 +53,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             list.Add(12);
 
             //Act
-            var hasValue = list.HasValue(12);
+            var hasValue = list.Contains(12);
 
             //Assert
             Assert.IsTrue(hasValue);
@@ -61,7 +61,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         }
 
         [TestMethod]
-        public void HasValue_False()
+        public void Contains_False()
         {
             //Arrenge
             LinkedList list = new LinkedList();
@@ -69,7 +69,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             list.Add(12);
 
             //Act
-            var hasValue = list.HasValue(100);
+            var hasValue = list.Contains(100);
 
             //Assert
             Assert.IsFalse(hasValue);
@@ -151,6 +151,52 @@ namespace com.tavaresasilva.MyOwnCollections.Test
 
             //Assert
             Assert.AreEqual(null, node);
+
+        }
+
+        [TestMethod]
+        public void IsEmpty_False()
+        {
+            //Arrange
+            LinkedList list = new LinkedList();
+            list.Add(10);
+
+            //Act
+            bool isEmpty = list.IsEmpty();
+
+            //Assert
+            Assert.IsFalse(isEmpty);
+        }
+
+        [TestMethod]
+        public void IsEmpty_True()
+        {
+            //Arrange
+            LinkedList list = new LinkedList();
+
+            //Act
+            bool isEmpty = list.IsEmpty();
+
+            //Assert
+            Assert.IsTrue(isEmpty);
+        }
+
+        [TestMethod]
+        public void Clear_Success()
+        {
+            //Arrange
+            LinkedList list = new LinkedList();
+            list.Add(10);
+            list.Add(20);
+
+            //Act
+
+            list.Clear();
+
+            //Assert
+
+            Assert.AreEqual(0, list.Count());
+            Assert.IsTrue(list.IsEmpty());
 
         }
     }

@@ -8,8 +8,9 @@ namespace com.tavaresasilva.MyOwnCollections
     {
         void Add(int value);
         void Remove(int value);
-        bool HasValue(int vale);
+        bool Contains(int vale);
         int Count();
         bool IsEmpty();
+        void Clear();
     }
 }
