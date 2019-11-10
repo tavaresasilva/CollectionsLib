@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Text;
-using MyOwnCollections;
+using com.tavaresasilva.MyOwnCollections;
 
-namespace MyOwnCollectionsTest
+namespace com.tavaresasilva.MyOwnCollections.Test
 {
     [TestClass]
     public class LinkedListTest

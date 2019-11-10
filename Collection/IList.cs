@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MyOwnCollections
+namespace com.tavaresasilva.MyOwnCollections
 {
     public interface IList
     {

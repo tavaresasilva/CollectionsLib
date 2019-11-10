@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <RootNamespace>MyOwnCollections</RootNamespace>
+    <RootNamespace>com.tavaresasilva.MyOwnCollections</RootNamespace>
     <AssemblyName>Collections</AssemblyName>
   </PropertyGroup>
 

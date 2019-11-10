@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("CollectionsTest")]
+[assembly: InternalsVisibleTo("Collections.Test")]
 
-namespace MyOwnCollections
+namespace com.tavaresasilva.MyOwnCollections
 {
     public class LinkedList : IList
     {

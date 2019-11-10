@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyOwnCollections
+namespace com.tavaresasilva.MyOwnCollections
 {
     public class Node
     {

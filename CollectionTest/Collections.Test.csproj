@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>CollectionsTest</AssemblyName>
+    <AssemblyName>Collections.Test</AssemblyName>
 
-    <RootNamespace>CollectionsTest</RootNamespace>
+    <RootNamespace>com.tavaresasilva.Collections.Test</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
