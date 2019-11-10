@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 
 namespace com.tavaresasilva.MyOwnCollections
 {
-    public class LinkedList : IList
+    public class LinkedList<T> : IList<T>
     {
         public int count;
-        private Node head;
+        private Node<T> head;
        
-        public void Add(int value)
+        public void Add(T value)
         {
-            Node newNode = new Node(value, head);
+            Node<T> newNode = new Node<T>(value, head);
            
             if(head != null)
             {
@@ -25,31 +25,31 @@ namespace com.tavaresasilva.MyOwnCollections
             count++;
         }
 
-        public void Remove(int value)
+        public void Remove(T value)
         {
-            Node currentNode = head;
+            Node<T> currentNode = head;
 
-            if (currentNode.Value == value)
+            if (currentNode.Value.Equals(value))
             {
                 head = head.Next;
             }
 
             while (currentNode != null)
             {
-                if (currentNode.Value == value)
+                if (currentNode.Value.Equals(value))
                 {
 
                 }
             }
         }
 
-        public bool Contains(int value)
+        public bool Contains(T value)
         {
-            Node currentNode = head;
+            Node<T> currentNode = head;
 
             while (currentNode != null)
             {
-                if (currentNode.Value == value)
+                if (currentNode.Value.Equals(value))
                 {
                     return true;
                 }
@@ -71,9 +71,9 @@ namespace com.tavaresasilva.MyOwnCollections
         }
 
 
-        internal Node Next(Node node)
+        internal Node<T> Next(Node<T> node)
         {
-            Node currentNode = head;
+            Node<T> currentNode = head;
 
             while(currentNode != null)
             {
@@ -90,9 +90,9 @@ namespace com.tavaresasilva.MyOwnCollections
             
         }
 
-        internal Node Previous(Node node)
+        internal Node<T> Previous(Node<T> node)
         {
-            Node currentNode = head;
+            Node<T> currentNode = head;
 
             while (currentNode != null)
             {
@@ -108,13 +108,13 @@ namespace com.tavaresasilva.MyOwnCollections
 
         }
 
-        internal Node GetFirstNodeWithValue(int value)
+        internal Node<T> GetFirstNodeWithValue(int value)
         {
-            Node currentNode = head;
+            Node<T> currentNode = head;
 
             while ( currentNode != null)
             {
-                if ( currentNode.Value == value)
+                if ( currentNode.Value.Equals(value))
                 {
                     return currentNode;
                 }

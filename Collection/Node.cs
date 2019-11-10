@@ -2,13 +2,13 @@
 
 namespace com.tavaresasilva.MyOwnCollections
 {
-    public class Node
+    public class Node<T>
     {
-        public Node Next { get; }
-        public Node Previous { get; set; }
-        public int Value { get; }
+        public Node<T> Next { get; }
+        public Node<T> Previous { get; set; }
+        public T Value { get; }
 
-        public Node(int value, Node next = null, Node previous = null)
+        public Node(T value, Node<T> next = null, Node<T> previous = null)
         {
             Value = value;
             Next = next;

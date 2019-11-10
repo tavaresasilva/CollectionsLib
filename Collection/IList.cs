@@ -4,11 +4,11 @@ using System.Text;
 
 namespace com.tavaresasilva.MyOwnCollections
 {
-    public interface IList
+    public interface IList<T>
     {
-        void Add(int value);
-        void Remove(int value);
-        bool Contains(int vale);
+        void Add(T value);
+        void Remove(T value);
+        bool Contains(T vale);
         int Count();
         bool IsEmpty();
         void Clear();

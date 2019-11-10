@@ -12,8 +12,8 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void CanICreateALinkedList_Success()
         {
             //Act
-            var linkedList = new LinkedList();
-            var typeOfLinkedList = typeof(LinkedList);
+            var linkedList = new LinkedList<object>();
+            var typeOfLinkedList = typeof(LinkedList<object>);
 
             //Assert
             Assert.IsInstanceOfType(linkedList, typeOfLinkedList);
@@ -24,7 +24,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         {
             //Arrage
             int expectedListCount = 3;
-            LinkedList linkedList = new LinkedList();
+            LinkedList<int> linkedList = new LinkedList<int>();
 
 
             //Act
@@ -48,7 +48,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void Contains_True()
         {
             //Arrenge
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.Add(24);
             list.Add(12);
 
@@ -64,7 +64,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void Contains_False()
         {
             //Arrenge
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.Add(24);
             list.Add(12);
 
@@ -80,7 +80,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void Next_Success()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
 
             list.Add(10);
             list.Add(20);
@@ -88,8 +88,8 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             list.Add(40);
 
             //Act
-            Node node = list.GetFirstNodeWithValue(20);
-            Node nextNode = list.Next(node);
+            Node<int> node = list.GetFirstNodeWithValue(20);
+            Node<int> nextNode = list.Next(node);
 
             //Assert
             Assert.AreEqual(10, nextNode.Value);
@@ -100,7 +100,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void Previous_Success()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
 
             list.Add(10);
             list.Add(20);
@@ -108,8 +108,8 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             list.Add(40);
 
             //Act
-            Node node = list.GetFirstNodeWithValue(20);
-            Node previousNode = list.Previous(node);
+            Node<int> node = list.GetFirstNodeWithValue(20);
+            Node<int> previousNode = list.Previous(node);
 
             //Assert
             Assert.AreEqual(30, previousNode.Value);
@@ -120,7 +120,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void GetFirstNodeWithValue_SuccessNode()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
 
             list.Add(10);
             list.Add(20);
@@ -139,7 +139,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void GetFirstNodeWithValue_Null()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
 
             list.Add(10);
             list.Add(20);
@@ -158,7 +158,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void IsEmpty_False()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.Add(10);
 
             //Act
@@ -172,7 +172,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void IsEmpty_True()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
 
             //Act
             bool isEmpty = list.IsEmpty();
@@ -185,7 +185,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
         public void Clear_Success()
         {
             //Arrange
-            LinkedList list = new LinkedList();
+            LinkedList<int> list = new LinkedList<int>();
             list.Add(10);
             list.Add(20);
 

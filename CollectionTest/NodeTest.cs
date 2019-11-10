@@ -13,8 +13,8 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             int value = 10;
 
             //Act
-            var node = new Node(value);
-            var nodeType = typeof(Node);
+            var node = new Node<int>(value);
+            var nodeType = typeof(Node<int>);
 
             //Assert
             Assert.IsInstanceOfType(node, nodeType);
@@ -29,7 +29,7 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             var expected = 54;
         
             //Act
-            var node = new Node(value);
+            var node = new Node<int>(value);
             var returned = node.Value;
             
             //Assert
@@ -45,8 +45,8 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             var node2Val = 20;
 
             //Act
-            var node2 = new Node(node2Val);
-            var node1 = new Node(node1Val, node2);
+            var node2 = new Node<int>(node2Val);
+            var node1 = new Node<int>(node1Val, node2);
 
             //Assert
             Assert.AreEqual(node2, node1.Next);
@@ -63,10 +63,10 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             var node3val = 30;
 
             //Act
-            var node3 = new Node(node3val);
-            var node2 = new Node(node2Val, node3, null);
+            var node3 = new Node<int>(node3val);
+            var node2 = new Node<int>(node2Val, node3, null);
             node3.Previous = node2;
-            var node1 = new Node(node1Val, node2, null);
+            var node1 = new Node<int>(node1Val, node2, null);
             node2.Previous = node1;
 
             //Assert
