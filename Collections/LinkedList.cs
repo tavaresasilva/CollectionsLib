@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 using System.Runtime.CompilerServices;
 
@@ -25,6 +24,11 @@ namespace com.tavaresasilva.MyOwnCollections
             count++;
         }
 
+        public void Add(Node<T> node)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(T value)
         {
             Node<T> currentNode = head;
@@ -43,21 +47,15 @@ namespace com.tavaresasilva.MyOwnCollections
             }
         }
 
+        public void Remove(Node<T> node)
+        {
+            throw new NotImplementedException();
+
+        }
+
         public bool Contains(T value)
         {
-            Node<T> currentNode = head;
-
-            while (currentNode != null)
-            {
-                if (currentNode.Value.Equals(value))
-                {
-                    return true;
-                }
-
-                currentNode = currentNode.Next;
-            }
-
-            return false;
+            return FindFirst(value) != null;
         }
 
         public int Count()
@@ -108,8 +106,10 @@ namespace com.tavaresasilva.MyOwnCollections
 
         }
 
-        internal Node<T> GetFirstNodeWithValue(int value)
+        internal Node<T> GetFirstNodeWithValue(T value)
         {
+            var node = FindFirst(value);
+
             Node<T> currentNode = head;
 
             while ( currentNode != null)
@@ -129,6 +129,47 @@ namespace com.tavaresasilva.MyOwnCollections
         {
             head = null;
             count = 0;
+        }
+
+        public Node<T> FindFirst(T value)
+        {
+            var currentNode = head;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Equals(value))
+                {
+                    return currentNode;
+                }
+
+                currentNode = currentNode.Next;
+            }
+
+            return currentNode;
+        }
+
+        public Node<T> FindLast(T value)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IList<Node<T>> FindAll(T value)
+        {
+            var list = new LinkedList<T>();
+
+            var currentNode = head;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Equals(value))
+                {
+                    list.Add(currentNode);
+                }
+
+                currentNode = currentNode.Next;
+            }
+
+            return null;
         }
 
         public LinkedList()

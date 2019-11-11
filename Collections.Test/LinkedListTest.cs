@@ -199,5 +199,22 @@ namespace com.tavaresasilva.MyOwnCollections.Test
             Assert.IsTrue(list.IsEmpty());
 
         }
+
+        [TestMethod]
+        public void First_Success()
+        {
+            //Arrange
+            var list = new LinkedList<int>();
+
+            list.Add(10);
+            list.Add(20);
+            list.Add(30);
+
+            //Act
+            var node = list.FindFirst(10);
+
+            //Assert
+            Assert.AreEqual(10, node.Value);
+        }
     }
 }
